@@ -6,6 +6,7 @@ services:
       - ./Token188.php:/www/app/Payments/Token188.php
       - ./StripeCheckout.php:/www/app/Payments/StripeCheckout.php
       - ./default.sing-box.json:/www/resources/rules/default.sing-box.json
+      - ./english-mail:/www/resources/views/mail/english-mail
       - ./.docker/.data/:/www/.docker/.data/
       # - ./config/v2board.php:/www/config/v2board.php
       - redis-socket:/run/redis-socket # 挂载socket
