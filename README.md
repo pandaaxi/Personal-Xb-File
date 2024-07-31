@@ -13,8 +13,8 @@ Get mail form
 ```
 git clone https://github.com/pandaaxi/Personal-Xb-File.git
 cd Personal-Xb-File
-mv english-mail ../ && cd ../
-rm -rf Personal-Xb-File
+mv english-mail ../
+cd ../ && rm -rf Personal-Xb-File
 ```
 Get usdt payment
 ```
