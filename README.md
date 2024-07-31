@@ -16,6 +16,11 @@ cd Personal-Xb-File
 mv english-mail ../ && cd ../
 rm -rf Personal-Xb-File
 ```
+Get usdt payment
+```
+wget https://raw.githubusercontent.com/pandaaxi/V2Boardusdtapi/main/Token188.php
+```
+
 Replace compose file with personalize
 ```
 rm docker-compose.yaml
