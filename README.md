@@ -9,6 +9,13 @@ Chooe Database type
 ```
 docker compose run -it --rm xboard php artisan xboard:install
 ```
+Get mail form
+```
+git clone https://github.com/pandaaxi/Personal-Xb-File.git
+cd Personal-Xb-File
+mv english-mail ../ && cd ../
+rm -rf Personal-Xb-File
+```
 Replace compose file with personalize
 ```
 rm docker-compose.yaml
