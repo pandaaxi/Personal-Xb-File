@@ -1,0 +1,26 @@
+services:
+  xboard:
+    image: ghcr.io/cedar2025/xboard:latest
+    volumes:
+      - ./.env:/www/.env
+      - ./Token188.php:/www/app/Payments/Token188.php
+      - ./StripeCheckout.php:/www/app/Payments/StripeCheckout.php
+      - ./default.sing-box.json:/www/resources/rules/default.sing-box.json
+      - ./.docker/.data/:/www/.docker/.data/
+      # - ./config/v2board.php:/www/config/v2board.php
+      - redis-socket:/run/redis-socket # 挂载socket
+    environment:
+      - docker=true #用于给安装脚本判断是否为docker环境
+    depends_on:
+      - redis
+    network_mode: host
+    restart: always
+  redis:
+    build:
+      context: .docker/services/redis
+    restart: always
+    volumes:
+      - ./.docker/.data/redis:/data/ # 挂载redis持久化数据
+      - redis-socket:/run/redis-socket # 挂载socket
+volumes:
+  redis-socket:
